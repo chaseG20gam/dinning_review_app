@@ -98,7 +98,7 @@ async function deleteRestaurant(id) {
 // navigate to add review page
 function navigateToAddReview(restaurantId) {
     localStorage.setItem('reviewRestaurantId', restaurantId);
-    window.location.href = 'add_review.html'; //undersocre!!
+    window.location.href = 'add_review.html';
 }
 
 // initial fetch
@@ -112,7 +112,7 @@ if (document.getElementById('reviewRestaurantId')) {
 }
 
 // pre-fill edit restaurant form
-if (document.getElementById('restaurantId') && window.location.pathname.endsWith('edit_restaurant.html')) { //undersocre!!
+if (document.getElementById('restaurantId') && window.location.pathname.endsWith('edit_restaurant.html')) {
     document.getElementById('restaurantId').value = localStorage.getItem('restaurantId');
     document.getElementById('name').value = localStorage.getItem('restaurantName');
     document.getElementById('location').value = localStorage.getItem('restaurantLocation');

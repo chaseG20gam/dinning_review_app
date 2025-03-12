@@ -1,4 +1,4 @@
-package com.example.dinning_review_app;
+package com.example.dinning_review_app.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
