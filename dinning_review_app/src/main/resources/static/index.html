@@ -5,37 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Reviews</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body">
     <div class="container">
         <h1>Restaurant Reviews</h1>
-
-        <!-- restaurant Table -->
-        <div class="table-container">
-            <table id="restaurant">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Location</th>
-                        <th>Cuisine</th>
-                        <th>Rating</th>
-                        <th>Reviews</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- data inserted by js -->
-                </tbody>
-            </table>
+        <div class = "searchbar">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search for a restaurant...">
+            <div class="actions">
+                <a href="add_restaurant.html" class="btn-primary">Add Restaurant</a>
+            </div>
         </div>
 
-        <div class="actions">
-            <a href="add_restaurant.html" class="btn-primary">Add Restaurant</a> <!-- !!!!underscore!!!!-->
+        <!-- restaurant container -->
+        <div id="restaurantContainer" class="restaurant-container">
+            <!-- restaurant cards inserted by js -->
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

@@ -5,24 +5,24 @@ const reviewApiUrl = 'http://localhost:8080/api/dinning_review_app/restaurant';
 async function getRestaurants() {
     const response = await fetch(apiUrl);
     const restaurants = await response.json();
-    const tbody = document.querySelector('#restaurant tbody');
-    tbody.innerHTML = '';
+    const restaurantContainer = document.getElementById('restaurantContainer');
+    restaurantContainer.innerHTML = '';
     restaurants.forEach(restaurant => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${restaurant.id}</td>
-            <td>${restaurant.name}</td>
-            <td>${restaurant.location}</td>
-            <td>${restaurant.cuisineType}</td>
-            <td>${restaurant.averageRating}</td>
-            <td>${restaurant.reviews.map(review => review.reviewText).join(', ')}</td>
-            <td>
+        const restaurantCard = document.createElement('div');
+        restaurantCard.className = 'restaurant-card';
+        restaurantCard.innerHTML = `
+            <h2>${restaurant.name}</h2>
+            <p><strong><img src="icons/location_ico.png" class="icon"> ${restaurant.location}</strong></p>
+            <p><strong>Cuisine:</strong> ${restaurant.cuisineType}</p>
+            <p><strong>Reviews:</strong> ${restaurant.reviews.map(review => review.reviewText).join('. ')}</p>
+            <p><strong>Rating:</strong> ${restaurant.averageRating}</p>
+            <div class="actions">
                 <button onclick="navigateToEditRestaurant(${restaurant.id})">Edit</button>
                 <button onclick="deleteRestaurant(${restaurant.id})">Delete</button>
                 <button onclick="navigateToAddReview(${restaurant.id})">Add Review</button>
-            </td>
+            </div>
         `;
-        tbody.appendChild(row);
+        restaurantContainer.appendChild(restaurantCard);
     });
 }
 
@@ -69,7 +69,7 @@ document.getElementById('reviewForm')?.addEventListener('submit', async (e) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ reviewText: review })
+        body: JSON.stringify({ reviewText: review, userId: 1 }) // set a default user ID for now
     });
 
     window.location.href = 'index.html';
@@ -102,7 +102,7 @@ function navigateToAddReview(restaurantId) {
 }
 
 // initial fetch
-if (document.querySelector('#restaurant')) {
+if (document.getElementById('restaurantContainer')) {
     getRestaurants();
 }
 
