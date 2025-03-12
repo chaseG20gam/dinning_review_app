@@ -9,11 +9,14 @@ import java.util.List;
 @RequestMapping("/api/dinning_review_app/restaurant")
 public class RestaurantController {
 
-    @Autowired
-    private RestaurantRepository restaurantRepository;
+    private final RestaurantRepository restaurantRepository;
+    private final ReviewRepository reviewRepository;
 
     @Autowired
-    private ReviewRepository reviewRepository;
+    public RestaurantController(RestaurantRepository restaurantRepository, ReviewRepository reviewRepository) {
+        this.restaurantRepository = restaurantRepository;
+        this.reviewRepository = reviewRepository;
+    }
 
     // get all restaurants
     @GetMapping
