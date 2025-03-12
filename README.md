@@ -4,6 +4,7 @@ This is an early-stage CRUD project for a Dining Review Application. The applica
 The project is built using Spring Boot for the backend and vanilla JavaScript for the frontend.
 The project is in an early stage and might have some issues that need to be resolved.
 In this project i'm testing with more complex databases and data structures, adding more tables and relationships between them and implementing new functionalities.
+Testing with more HTML files and adding navigation through the application.
 
 ## Features
 
@@ -33,8 +34,8 @@ In this project i'm testing with more complex databases and data structures, add
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/dining-review-app.git
-    cd dining-review-app
+    git clone https://github.com/yourusername/dining_review_app.git
+    cd dining_review_app
     ```
 
 2. Configure the database:
@@ -60,4 +61,4 @@ In this project i'm testing with more complex databases and data structures, add
 
 ## Known Issues
 
-- The "Submit Review" button is currently under development and does not work yet.
+- The "Submit Review" button is currently under development and does not work yet. (Fixed)

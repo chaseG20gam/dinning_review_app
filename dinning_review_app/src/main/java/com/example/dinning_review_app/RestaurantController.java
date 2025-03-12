@@ -44,7 +44,7 @@ public class RestaurantController {
     // update restaurant
     @PutMapping("/{id}")
     public Restaurant updateRestaurant(@PathVariable Long id, @RequestBody Restaurant restaurant) {
-        Restaurant existingRestaurant = restaurantRepository.findById(id).orElseThrow(() -> new RuntimeException("Restaurant not found"));
+        Restaurant existingRestaurant = restaurantRepository.findById(id).orElseThrow(() -> new RuntimeException(" not found"));
         existingRestaurant.setName(restaurant.getName());
         existingRestaurant.setLocation(restaurant.getLocation());
         existingRestaurant.setCuisineType(restaurant.getCuisineType());
@@ -63,6 +63,7 @@ public class RestaurantController {
     @PostMapping("/{restaurantId}/review")
     public Review addReview(@PathVariable Long restaurantId, @RequestBody Review review) {
         review.setRestaurantId(restaurantId);
+        review.setUserId(1L); // set a default user id (for now)
         return reviewRepository.save(review);
     }
 

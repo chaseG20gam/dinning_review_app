@@ -14,6 +14,9 @@ public class Review {
     @Column(name = "restaurant_id")
     private Long restaurantId;
 
+    @Column(name = "user_id")
+    private Long userId;
+
     @Column(name = "review_text")
     private String reviewText;
 
@@ -38,6 +41,14 @@ public class Review {
 
     public void setRestaurantId(Long restaurantId) {
         this.restaurantId = restaurantId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getReviewText() {

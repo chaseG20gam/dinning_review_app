@@ -1,175 +1,78 @@
-/* general Reset and Font */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* style under development */
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 20px;
-    background: #17182b;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* keep content at the top */
-    align-items: center;
-    min-height: 100vh;
-    overflow: auto; /* allow scrolling when content overflows */
-}
-
-/* font face for Cyberpunk Style */
-@font-face {
-    font-family: Cyber;
-    src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
-    font-display: swap;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-    color: #f5ed00;
-    font-family: 'Cyber', sans-serif;
     text-align: center;
-}
-
-/* basic form styling */
-form {
     margin-bottom: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    position: relative; /* keeps form elements at the top */
 }
 
-/* label styling */
+.card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 label {
     display: block;
-    margin-top: 10px;
-    color: #00f5ff; /* light blue color */
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
-/* adjust checkbox and label alignment */
-label[for="blogCompleted"] {
-    display: inline-block;
-    margin-right: 10px; /* space between label and checkbox */
-}
-
-/* input fields and buttons */
-input, select, button {
-    margin-top: 5px;
-    font-size: 16px;
-    padding: 10px;
-    width: 100%; /* ensure input fields take up full width */
-    max-width: 300px; /* limit maximum width */
-    box-sizing: border-box; /* prevent overflow */
-}
-
-/* cyberpunk button */
-.cybr-btn {
-    --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
-    --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
-    --primary-hue: 0;
-    --primary-lightness: 50;
-    --color: hsl(0, 0%, 100%);
-    --font-size: 26px;
-    --shadow-primary-hue: 180;
-    --label-size: 9px;
-    --shadow-secondary-hue: 60;
-    --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
-    position: relative;
-    font-family: 'Cyber', sans-serif;
-    color: var(--color);
-    text-transform: uppercase;
-    background: var(--primary);
-    font-size: var(--font-size);
-    outline: transparent;
-    letter-spacing: 2px;
-    font-weight: 700;
-    border: 0;
-    min-width: 300px;
-    padding: 32px 64px;
-    box-shadow: inset -3px 0 0 var(--shadow-primary);
-    clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
+input[type="text"],
+input[type="number"],
+textarea {
     width: 100%;
-    max-width: 400px; /* limit width of submit button */
-}
-
-.cybr-btn:hover {
-    box-shadow: 0px 0px 10px 4px var(--shadow-primary), 0px 0px 15px 10px var(--shadow-secondary);
-}
-
-.cybr-btn:active {
-    transform: scale(0.95);
-}
-
-.cybr-btn__tag {
-    position: absolute;
-    padding: 1px 4px;
-    letter-spacing: 1px;
-    line-height: 1;
-    bottom: -5%;
-    right: 5%;
-    background: var(--shadow-secondary);
-    color: hsl(0, 0%, 0%);
-    font-size: var(--label-size);
-    box-shadow: 2px 0 inset var(--shadow-primary);
-}
-
-/* table styling */
-table {
-    width: 90%; /* increase table width */
-    max-width: 1200px; /* max table width for large screens */
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #2d2f45;
-    max-height: 600px; /* increase table height */
-    overflow-y: auto; /* make it scrollable vertically */
-    display: block;
-    margin-bottom: 20px; /* add spacing below the table */
-}
-
-table td {
-    text-align: center;
-}
-
-/*sticky table headers */
-th {
-    background-color: #00f5ff; /* light blue background for contrast */
-    color: #17182b; /* dark text color for readability */
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    padding: 12px;
-}
-
-/* table Data Cells */
-th, td {
-    border: 1px solid #333;
     padding: 8px;
-    text-align: left;
-    color: #fff;
-    word-wrap: break-word;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* buttons */
 button {
-    cursor: pointer;
-    font-size: 16px;
     padding: 10px 20px;
-    background-color: #f5ed00;
     border: none;
-    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+.actions {
     text-align: center;
-    border-radius: 5px;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-button:hover {
-    background-color: #e6de00;
-}
-
-button + button {
-    margin-left: 10px;
 }

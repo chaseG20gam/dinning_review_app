@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Review</h1>
+
+        <!-- review form -->
+        <div class="card">
+            <h2>Add a Review</h2>
+            <form id="reviewForm">
+                <input type="hidden" id="reviewRestaurantId">
+
+                <label for="review">Review:</label>
+                <textarea id="review" name="review" rows="3" required></textarea>
+
+                <button type="submit" class="btn-primary">Submit Review</button>
+            </form>
+        </div>
+
+        <div class="actions">
+            <a href="index.html" class="btn-secondary">Back to Restaurants</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

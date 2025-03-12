@@ -3,59 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Review</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Restaurant Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Restaurants</h1>
+    <div class="container">
+        <h1>Restaurant Reviews</h1>
 
-    <!-- form to create or update a restaurant-->
-    <form id="restaurantForm">
-        <input type="hidden" id="restaurantId">
+        <!-- restaurant Table -->
+        <div class="table-container">
+            <table id="restaurant">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Cuisine</th>
+                        <th>Rating</th>
+                        <th>Reviews</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- data inserted by js -->
+                </tbody>
+            </table>
+        </div>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+        <div class="actions">
+            <a href="add_restaurant.html" class="btn-primary">Add Restaurant</a> <!-- !!!!underscore!!!!-->
+        </div>
+    </div>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location">
-
-        <label for="cuisine_type">Cuisine Type:</label>
-        <input type="text" id="cuisine_type" name="cuisine_type">
-
-        <label for="average_rating">Average Rating:</label>
-        <input type="number" id="average_rating" name="average_rating" step="0.1" min="0" max="5">
-
-        <button type="submit" class="cybr-btn">Submit</button>
-    </form>
-
-    <!-- form to add a review -->
-    <form id="reviewForm" style="display:none;">
-        <input type="hidden" id="reviewRestaurantId">
-
-        <label for="review">Review:</label>
-        <textarea id="review" name="review"></textarea>
-
-        <button type="submit" class="cybr-btn">Submit Review</button>
-    </form>
-
-    <!-- table to display restaurants -->
-    <table id="restaurant">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Cuisine Type</th>
-                <th>Average Rating</th>
-                <th>Reviews</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- rows will be populated by js-->
-        </tbody>
-    </table>
-
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
