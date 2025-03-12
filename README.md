@@ -1,6 +1,6 @@
 # Dining Review App
 
-This is an early-stage project for a Dining Review Application. The application allows users to view a list of restaurants, add new restaurants, and submit reviews for each restaurant. 
+This is an early-stage CRUD project for a Dining Review Application. The application allows users to view a list of restaurants, add new restaurants, and submit reviews for each restaurant. 
 The project is built using Spring Boot for the backend and vanilla JavaScript for the frontend.
 The project is in an early stage and might have some issues that need to be resolved.
 In this project i'm testing with more complex databases and data structures, adding more tables and relationships between them and implementing new functionalities.
